@@ -1,0 +1,72 @@
+\documentclass[12pt]{article}
+\usepackage[frenchb]{babel}
+\usepackage[utf-8]{inputenc}  %%latin1
+\usepackage{fullpage}
+\usepackage{graphicx}		%% to insert pics
+\usepackage{listings}
+\usepackage{color}
+\usepackage{url}
+\usepackage{pythonhighlight}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\title{Testing}
+
+\hypersetup{linkcolor=blue}
+\definecolor{medium-blue}{rgb}{0,0,139}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\hypersetup{colorlinks, urlcolor={medium-blue}}
+\date{}
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+
+
+\begin{document}
+\maketitle
+\begin{center}
+
+Im Ordner TestRoutine befindet sich eine File \color{mymauve}test.py\color{black}.
+Um das Projekt richtig testen zu können, wurde die \color{mymauve}test.py \color{black} so eingerichtet, dass beliebig
+viele Playlists angesprochen werden können. 
+\end{center}
+\hline \vspace{0.2cm}
+\color{mymauve}
+Benötigte libraries:
+\color{black}
+\begin{itemize}
+    \item pandas
+    \item mlxtend
+    \item tqdm
+    \item psycopg2
+    \item json
+\end{itemize}\vspace{0.2cm}
+\hline \vspace{0.2cm}
+\\\\
+Auch das Überprüfen einer validen submission wird übernommen. Dies funktioniert allerdings nur bei einer Angabe
+von \color{red}10, 20 oder 30 \color{black} Playlists.
+\\\\
+\hline \vspace{0.2cm}
+\color{mymauve}Es muss ein Tunnel zur Datenbank existieren!\color{black}\vspace{0.2cm}
+\hline \vspace{0.2cm}
+
+\begin{center}
+\begin{python}
+python test.py 10  |   python test.py 20  |  python test.py 30  
+\end{python}
+\end{center}
+\\
+Zunächst wird eine \color{mymauve}test.csv \color{black} erstellt, in welcher die relevanten Playlistdaten aus der Datenbank zwischengespeichert werden.
+\\\\Nun werden die Daten per Logik, welche aus der RuleMining stammt, in Regeln abgewandelt. Diese werden dann in der \color{mymauve}testrules.csv \color{black} zwischengespeichert.
+\\\\Letztlich werden die Regeln noch angewendet, und eine endgültige File testsubmissions.csv erstellt.
+
+\end{document}
