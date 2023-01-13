@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 
 from spotipy.oauth2 import SpotifyClientCredentials
-cid = "e9cd8b4ec4134b0aa608f2c8e28169c1"
-secret = "ba0ab98317684e22881aa0af5d2423f6"
+cid = "NotMeantForYourEyes"
+secret = "AlsoNotMeantForYourEyes;)"
 client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
